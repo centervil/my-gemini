@@ -13,7 +13,7 @@ E2Eテストの結果も分析に含めてください。テストの失敗や�
 以下の監査情報を確認してください:
 {{stdout}}
 """
-command = ".gemini/scripts/collect-metrics.sh && pnpm tsx .gemini/scripts/collect-audit-context.ts {{.project-name}} && (pnpm --filter {{.project-name}} test || true)"
+command = ".gemini/skills/skill-metrics-manager/scripts/run-audit.sh && pnpm tsx .gemini/scripts/collect-audit-context.ts {{.project-name}} && (pnpm --filter {{.project-name}} test || true)"
 
 [[argument]]
 name = "project-name"

@@ -3,7 +3,7 @@
 # Metrics Collection Script for Gemini CLI
 # Orchestrator Refactored for Issue #10
 
-OUTPUT_DIR=".roo/audit_logs"
+OUTPUT_DIR=".ops/audit_logs"
 OUTPUT_FILE="$OUTPUT_DIR/metrics.json"
 
 mkdir -p "$OUTPUT_DIR"
@@ -33,7 +33,7 @@ run_collectors() {
 echo "Collecting metrics..."
 
 # Core Collectors
-run_collectors ".gemini/metrics/collectors"
+run_collectors "$(dirname "$0")/collectors"
 
 # Project Specific Collectors
 run_collectors ".ops/metrics/collectors"
