@@ -1,3 +1,8 @@
+---
+name: skill-metrics-manager
+description: プロジェクトのメトリクス収集（監査の実行、新規メトリクスの作成、ステータス分析）を管理するスキル。
+---
+
 # Skill: Metrics Manager
 
 ## Description

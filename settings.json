@@ -70,5 +70,15 @@
   "fileFiltering": {
     "respectGitIgnore": true,
     "disableFuzzySearch": false
+  },
+  "agents": {
+    "overrides": {
+      "codebase_investigator": {
+        "enabled": true,
+        "runConfig": {
+          "maxTurns": 15
+        }
+      }
+    }
   }
 }

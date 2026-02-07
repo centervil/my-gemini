@@ -1,3 +1,8 @@
+---
+name: skill-issue-manager
+description: GitHub Issueのライフサイクル管理（作成、仕様策定、実装、レビュー、完了）を自動化・支援し、Issue駆動開発（IDD）を推進するスキル。
+---
+
 # Skill: GitHub Issue Manager
 
 GitHub Issueのライフサイクル全体（作成、開発開始、実装、レビュー、完了）を管理し、Issue駆動開発（IDD）のプロセスを自動化・支援します。

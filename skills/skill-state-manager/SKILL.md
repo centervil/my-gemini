@@ -1,3 +1,8 @@
+---
+name: skill-state-manager
+description: プロジェクトの進捗状況（project_state.md やタスクリスト）を追跡し、自動的に同期・更新するスキル。
+---
+
 # Skill: State Manager
 
 このスキルは、プロジェクトの進捗状況を追跡し、`.ops/project_state.md` や `docs/issues/[ID]/tasks.md` などのステータス管理ファイルを自動的に更新します。
