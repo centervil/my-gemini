@@ -17,14 +17,20 @@ Use this skill when the user asks to:
 ### 1. Run Audit (Measurement)
 To collect current metrics and save them to the history:
 ```bash
-.gemini/skills/skill-metrics-manager/scripts/run-audit.sh
+bash .gemini/skills/skill-metrics-manager/scripts/run-audit.sh
+```
+
+### 2. Check Quality Gates
+To verify if the current metrics meet the project's quality standards:
+```bash
+python3 .gemini/skills/skill-metrics-manager/scripts/check-gates.py
 ```
 This script will:
-1. Execute all registered collectors.
-2. Update `.ops/audit_logs/metrics.json` (latest).
-3. Archive the result to `.ops/audit_logs/history/metrics_YYYYMMDD-HHMMSS.json`.
+1. Read the latest `.ops/audit_logs/metrics.json`.
+2. Compare values against thresholds in `.ops/policies/metrics.yaml`.
+3. Exit with code 1 if any "critical" gate fails.
 
-### 2. Add New Metric
+### 3. Add New Metric
 To create a new collector script:
 ```bash
 .gemini/skills/skill-metrics-manager/scripts/create-collector.sh [metric_name]
