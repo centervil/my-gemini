@@ -23,6 +23,18 @@ description: プロジェクトの進捗状況（project_state.md やタスク�
 
 実装が完了したタスクを検出し、対応する `tasks.md` の項目を自動的にチェック済みにします。
 
+## CLI Usage
+
+`scripts/update-state.sh` を使用して、手動または自動でステータスを更新できます。
+
+```bash
+# 特定のタスクを完了にする
+bash .gemini/skills/skill-state-manager/scripts/update-state.sh <ISSUE_ID> "" <TASK_ID>
+
+# Issue全体を完了にする（project_state.md も更新されます）
+bash .gemini/skills/skill-state-manager/scripts/update-state.sh <ISSUE_ID> completed
+```
+
 ---
 
 ## Resources
