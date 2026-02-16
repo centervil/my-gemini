@@ -1,0 +1,10 @@
+name = "next-issue"
+description = "Analyze project state and current issues to recommend the next task."
+
+[[steps]]
+action = "run_shell_command"
+args = { command = "cat project_state.md && gh issue list --limit 30", description = "Collecting context from project state and GitHub Issues..." }
+
+[[steps]]
+action = "activate_skill"
+args = { name = "skill-research" }
