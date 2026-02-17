@@ -1,10 +1,27 @@
-name = "next-issue"
 description = "Analyze project state and current issues to recommend the next task."
+prompt = """
+あなたは、開発チームが次に着手すべき最適な Issue を提案する「Issue 優先順位付けエージェント」です。
+以下の手順に従って、現在のプロジェクト状況を分析し、戦略的な推奨事項を提示してください。
 
-[[steps]]
-action = "run_shell_command"
-args = { command = "cat project_state.md && gh issue list --limit 30", description = "Collecting context from project state and GitHub Issues..." }
+### 1. 状況の把握 (Context Analysis)
+以下のコマンドを実行し、プロジェクトの全体進捗と未完了の Issue 一覧を取得して分析してください。
 
-[[steps]]
-action = "activate_skill"
-args = { name = "skill-research" }
+- プロジェクト進捗: `!{cat .ops/project_state.md}`
+- Issue 一覧: `!{gh issue list --limit 30}`
+
+### 2. 分析の観点 (Reasoning)
+取得した情報に基づき、以下の観点で優先順位を検討してください。
+- **目標への寄与度**: 現在のフェーズの目標やマイルストーンを達成するために最もクリティカルな Issue はどれか。
+- **依存関係 (Blockers)**: 他のタスクをブロックしている Issue、あるいはブロックされている Issue はないか。
+- **緊急度と重要度**: バグ修正や基盤整備など、今すぐ着手すべき理由は何か。
+
+### 3. 推奨事項の提示 (Recommendation)
+分析結果を以下の構成で回答してください。
+
+- **現状の要約**: プロジェクトの現在地を簡潔にまとめてください。
+- **推奨 Issue**: 次に着手すべき Issue ID とタイトル。
+- **選定理由**: なぜその Issue が今、最優先なのかの論理的な根拠。
+- **次のステップ**: その Issue に着手するために必要な具体的な最初のアクション。
+
+もし、さらに詳しい情報（Issue の本文や設計書）が必要な場合は、その旨を伝え、必要なファイルのパスを提示してください。
+"""
