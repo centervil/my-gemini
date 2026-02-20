@@ -1,3 +1,6 @@
 [submodule "skills"]
 	path = skills
 	url = https://github.com/centervil/my-skills
+[submodule "commands"]
+	path = commands
+	url = https://github.com/centervil/my-commands
