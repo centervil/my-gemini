@@ -6,18 +6,24 @@
     "retryFetchErrors": true
   },
   "experimental": {
-    "skills": true,
-    "codebaseInvestigatorSettings": {
-      "enabled": true,
-      "maxNumTurns": 15
-    }
+    "skills": true
   },
   "ui": {
     "showStatusInTitle": true,
     "dynamicWindowTitle": true,
     "showMemoryUsage": true,
     "useAlternateBuffer": false,
-    "incrementalRendering": false
+    "incrementalRendering": false,
+    "footer": {
+      "hideCWD": false,
+      "showLabels": true,
+      "items": [
+        "cwd",
+        "branch",
+        "model",
+        "memory"
+      ]
+    }
   },
   "context": {
     "fileName": [
